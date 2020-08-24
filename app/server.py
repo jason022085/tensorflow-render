@@ -88,7 +88,7 @@ async def analyze(request):
     img = np.array(img)
     img = preprocess_input(np.array([img]))  # 這個函數在哪裡?
     predictions = learn.predict(img)
-    if np.max(predictions) <= 0.5:
+    if np.max(predictions) <= 0.7:
         prediction = -1
     else:
         prediction = predictions.argmax()
